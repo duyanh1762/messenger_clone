@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Messenger Clone</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!--Danh sach lien he-->
+    <div id="list-contact">
+      <div class="header">
+        <div class="title">
+          <h2>Chat</h2>
+          <div class="ellipsis-i">
+            <i class="fa-sharp fa-solid fa-ellipsis"></i>
+          </div>
+          <div class="video-i"><i class="fa-sharp fa-solid fa-video"></i></div>
+          <div class="pen-i">
+            <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+          </div>
+        </div>
+        <div class="search">
+          <input type="text" placeholder="Tìm kiếm trên Messenger" onkeyup="searchContact()" />
+        </div>
+      </div>
+      <div class="body">
+
+      </div>
+    </div>
+    <!--Ket thuc-->
+
+    <!--Khung chat-->
+    <div id="chat-frame">
+      <div class="header-chat">
+        <div class="infor-contact">
+          <div class="avt">
+            <img
+              src="">
+          </div>
+          <div class="name-user"> </div>
+        </div>
+        <div class="setting">
+          <div class="phone-i">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div class="call-video-i">
+            <i class="fa-sharp fa-solid fa-video"></i>
+          </div>
+          <div class="noti-i" onclick="showSetting()">
+            <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-box">
+        <div class="infor">
+          <div class="avatar-contact">
+            <img
+              src=""
+              >
+          </div>
+          <div class="name"> </div>
+          <div class="hometown"> </div>
+        </div>
+        <div class="chat-message">
+
+
+        </div>
+      </div>
+
+      <div class="input-mess">
+        <div class="add-action"><i class="fa-solid fa-circle-plus"></i></div>
+        <div class="add-image"><i class="fa-solid fa-images"></i></div>
+        <div class="add-sticker"><i class="fa-solid fa-face-smile"></i></div>
+        <div class="add-gif"><i class="fa-solid fa-gift"></i></div>
+        <input class="set-mess" type="text" placeholder="Aa" />
+        <div class="like-btn" onclick="likeButton()"></div>
+      </div>
+    </div>
+    <!--Ket thuc-->
+
+    <!--Chi tiet lien he va cai dat-->
+    <div id="setting-converstation" >
+      <div class="image">
+        <img
+          src=""
+        />
+      </div>
+      <div class="name-contact"></div>
+      <div class="handle-user">
+        <div class="profile-i">
+          <div class="icon"><i class="fa-brands fa-facebook"></i></div>
+          <div class="action-name">Trang cá nhân</div>
+        </div>
+        <div class="bell-i">
+          <div class="icon"><i class="fa-solid fa-bell"></i></div>
+          <div class="action-name">Tắt thông báo</div>
+        </div>
+        <div class="seacrh-i">
+          <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <div class="action-name">Tìm kiếm</div>
+        </div>
+      </div>
+
+      <div class="chat-custom" onclick="showSettingCustom('setting-chat-custom')">
+        <div class="content">Tùy chỉnh đoạn chat</div>
+        <div class="icon"><i class="fa-solid fa-chevron-down"></i></div>
+      </div>
+      <div class="setting-chat-custom" style="display: none;">
+        <div class="option-1" onclick="showDetailCustom('content-option')">
+          <div class="icon"><i class="fa-solid fa-circle-dot"></i></div>
+          <div class="content">Đổi chủ đề</div>
+        </div>
+        <div class="option-2" onclick="showDetailCustom('emotion-option')">
+          <div class="icon"><i class="fa-solid fa-thumbs-up"></i></div>
+          <div class="content">Thay đổi biểu tượng cảm xúc</div>
+        </div>
+        <div class="option-3" onclick="showDetailCustom('nickname-option')">
+          <div class="icon"><i class="fa-solid fa-a"></i></div>
+          <div class="content">Chỉnh sủa biệt danh</div>
+        </div>
+        <div class="option-4">
+          <div class="icon">
+            <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div class="content">Tìm kiếm trong cuộc trò chuyện</div>
+        </div>
+      </div>
+
+      <div class="file" onclick="showSettingCustom('setting-file')">
+        <div class="content">File phương tiện, file và liên kết</div>
+        <div class="icon"><i class="fa-solid fa-chevron-down"></i></div>
+      </div>
+      <div class="setting-file" style="display: none;">
+        <div class="option-1">
+          <div class="icon"><i class="fa-solid fa-images"></i></div>
+          <div class="content">File phương tiện</div>
+        </div>
+        <div class="option-2">
+          <div class="icon"><i class="fa-solid fa-file"></i></div>
+          <div class="content">File</div>
+        </div>
+        <div class="option-3">
+          <div class="icon"><i class="fa-solid fa-link"></i></div>
+          <div class="content">Liên kết</div>
+        </div>
+      </div>
+
+      <div class="private" onclick="showSettingCustom('setting-private')">
+        <div class="content">Quyền riêng tư & hỗ trợ</div>
+        <div class="icon"><i class="fa-solid fa-chevron-down"></i></div>
+      </div>
+      <div class="setting-private" style="display:none;">
+        <div class="option-1">
+          <div class="icon"><i class="fa-regular fa-bell"></i></div>
+          <div class="content">Tắt thông báo</div>
+        </div>
+        <div class="option-2">
+          <div class="icon"><i class="fa-solid fa-square-xmark"></i></div>
+          <div class="content">Bỏ qua tin nhắn</div>
+        </div>
+        <div class="option-3">
+          <div class="icon"><i class="fa-solid fa-user-lock"></i></div>
+          <div class="content">Chặn</div>
+        </div>
+        <div class="option-4">
+          <div class="icon">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+          <div class="content">Báo cáo</div>
+        </div>
+      </div>
+    </div>
+    <!--Ket thuc-->
+
+    <!--Lop nen-->
+    <div class="white-background" style="display: none;"></div>
+    <!--Ket thuc-->
+
+    <!--Cac phan cai dat-->
+    <!--Chon chu de-->
+    <div class="content-option" style="display: none;">
+      <div class="header-tag">
+        <h3>Chủ đề</h3>
+        <button onclick="turnOffDetailCustom('content-option')">X</button>
+      </div>
+      <div class="list-color">
+        <div class="red" style="background-color: red" onclick="setColorChat('red')"></div>
+        <div class="blueviolet" style="background-color: blueviolet"  onclick="setColorChat('blueviolet')"></div>
+        <div class="green" style="background-color: green"  onclick="setColorChat('green')"></div>
+        <div class="orange" style="background-color: orange"  onclick="setColorChat('orange')"></div>
+        <div class="pink" style="background-color: pink"  onclick="setColorChat('pink')"></div>
+        <div class="gray" style="background-color: gray"  onclick="setColorChat('gray')"></div>
+      </div>
+      <div class="btn">
+        <button class="cancel" onclick="turnOffDetailCustom('content-option')">Hủy</button>
+        <button class="save">Lưu</button>
+      </div>
+    </div>
+    <!--Ket thuc-->
+
+    <!--Chon bieu tuong cam xuc-->
+    <div class="emotion-option" style="display: none;">
+      <div class="header-tag">
+        <h3>Biểu tượng cảm xúc</h3>
+        <button onclick="turnOffDetailCustom('emotion-option')">X</button>
+      </div>
+      <div class="emotion-selected">
+        <h5>Biểu tượng cảm xúc hiện tại</h5>
+        <i class="fa-solid fa-thumbs-up"></i>
+        <button class="remove">X Gỡ</button>
+      </div>
+      <div class="list-emotion">
+        <div class="smile" onclick="setEmotionIcon(`<i class='fa-solid fa-face-smile'></i>`)"><i class="fa-solid fa-face-smile"></i></div>
+        <div class="sad" onclick="setEmotionIcon(`<i class='fa-solid fa-face-sad-tear'></i>`)"><i class="fa-solid fa-face-sad-tear"></i></div>
+        <div class="shit" onclick="setEmotionIcon(`<i class='fa-solid fa-poo'></i>`)"><i class="fa-solid fa-poo"></i></div>
+      </div>
+    </div>
+    <!--Ket thuc-->
+
+    <!--Thay doi nickname-->
+    <div class="nickname-option" style="display: none;">
+      <div class="header-tag">
+        <h3>Biệt danh</h3>
+        <button onclick="turnOffDetailCustom('nickname-option')">X</button>
+      </div>
+      <div class="friend-nickname">
+        <div class="avt-friend">
+          <img
+            src=""
+          />
+        </div>
+        <div class="name-friend"></div>
+        <div class="icon-change"><i class="fa-solid fa-pen" onclick="setNickname()"></i></div>
+      </div>
+      <div class="my-nickname">
+        <div class="avt-mine">
+          <img
+            src="https://scontent.fhan5-9.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?stp=dst-png_p100x100&_nc_cat=1&ccb=1-7&_nc_sid=7206a8&_nc_ohc=yk93IQ_5_XkAX-SwzM2&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fhan5-9.fna&oh=00_AfCSYJwQ4dirTjEybYnoV1Z3da8ghm8rJnPxHEENrPMHhw&oe=63A2E638"
+          />
+        </div>
+        <div class="name-mine">Duy Anh</div>
+        <div class="icon-change"><i class="fa-solid fa-pen"></i></div>
+      </div>
+    </div>
+
+    <!--Ket thuc-->
+
+    <!--Ket thuc-->
+  </body>
+  <script src="./index.js" ></script>
+</html>
